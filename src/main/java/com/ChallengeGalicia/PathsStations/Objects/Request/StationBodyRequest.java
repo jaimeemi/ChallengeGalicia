@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class StationBodyRequest {
 
+    protected Long id;
+
     @NotBlank(message = "Name cannot be null or empty")
     protected String name;
 
