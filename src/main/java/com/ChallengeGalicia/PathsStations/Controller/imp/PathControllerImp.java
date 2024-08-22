@@ -27,7 +27,7 @@ public class PathControllerImp implements PathController {
 
         boolean saveStation = false;
 
-        pathRequest.setId(pathId);
+
         try{
             saveStation = pathService.savePath( pathRequest );
 
@@ -60,7 +60,6 @@ public class PathControllerImp implements PathController {
             response = pathService.getDestination(sourceID, destinationId );
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (RuntimeException ex) {
-            throw new RuntimeException("Error Durante el proceso de busqueda de rutas");
             System.out.println(ex.getMessage() + ex.getCause());
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }

@@ -15,7 +15,7 @@ public class PathResponse {
     protected long destination_id;
 
     public PathResponse(PathDTO pathDTO){
-        this.id = pathDTO.getId();
+        this.id = pathDTO.getSource_id();
         this.destination_id = pathDTO.getDestination_id();
         this.cost = pathDTO.getCost();
     }

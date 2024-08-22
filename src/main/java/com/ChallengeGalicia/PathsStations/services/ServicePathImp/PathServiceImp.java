@@ -6,11 +6,11 @@ import com.ChallengeGalicia.PathsStations.Objects.Request.PathRequest;
 import com.ChallengeGalicia.PathsStations.Objects.Response.DestinationsResponse;
 import com.ChallengeGalicia.PathsStations.Objects.Response.PathResponse;
 import com.ChallengeGalicia.PathsStations.services.PathService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @SuppressWarnings("unused")
@@ -38,10 +38,27 @@ public class PathServiceImp implements PathService {
         return response;
     }
 
-    ResponseEntity<List<DestinationsResponse>> getDestinations(Long sourceID, Long destinationId ){
+    @Override
+    public List<DestinationsResponse> getDestination(Long sourceID, Long destinationId) {
 
-
-        return null;
+        return searchBestWays(sourceID, destinationId);
     }
+
+    private List<DestinationsResponse> searchBestWays(Long sourceID, Long destinationId){
+        List<PathDTO> lsDestinos = lsPath.stream().filter(p -> p.getDestination_id() == destinationId).collect(Collectors.toList());
+        lsDestinos.stream().filter(p -> p.getSource_id() == sourceID).collect(Collectors.toList());
+
+        return castDTOtoResponse( lsDestinos ) ;
+    }
+
+    private List<DestinationsResponse> castDTOtoResponse( List<PathDTO> dtoList){
+        List<DestinationsResponse> response = new ArrayList<>();
+        for( PathDTO dto : dtoList){
+            response.add (new DestinationsResponse( dto ) );
+        }
+        return response;
+    }
+
+
 
 }

@@ -14,5 +14,5 @@ public interface PathService {
 
     List<PathResponse> getPaths();
 
-    ResponseEntity<List<DestinationsResponse>> getDestinations(Long sourceID, Long destinationId );
+    List<DestinationsResponse> getDestination(Long sourceID, Long destinationId);
 }
