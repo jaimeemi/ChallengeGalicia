@@ -3,6 +3,7 @@ package com.ChallengeGalicia.PathsStations.services.ServiceStationImp;
 import com.ChallengeGalicia.PathsStations.Exceptions.SaveStationException;
 import com.ChallengeGalicia.PathsStations.Objects.Request.StationRequest;
 import com.ChallengeGalicia.PathsStations.Objects.DTO.StationsDTO;
+import com.ChallengeGalicia.PathsStations.Objects.Response.StationResponse;
 import com.ChallengeGalicia.PathsStations.services.StationService;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,14 @@ public class StationServiceImp implements StationService{
         } catch (SaveStationException ex){
             throw new SaveStationException();
         }
+    }
+
+    public List<StationResponse> getStations() {
+        List<StationResponse> response = null;
+        for(StationsDTO sr : lsStations){
+            response.add( new StationResponse(sr) );
+        }
+        return response;
     }
 
 

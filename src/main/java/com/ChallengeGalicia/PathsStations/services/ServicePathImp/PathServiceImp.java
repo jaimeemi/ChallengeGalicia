@@ -3,6 +3,7 @@ package com.ChallengeGalicia.PathsStations.services.ServicePathImp;
 import com.ChallengeGalicia.PathsStations.Exceptions.SavePathExpcetion;
 import com.ChallengeGalicia.PathsStations.Objects.DTO.PathDTO;
 import com.ChallengeGalicia.PathsStations.Objects.Request.PathRequest;
+import com.ChallengeGalicia.PathsStations.Objects.Response.PathResponse;
 import com.ChallengeGalicia.PathsStations.services.PathService;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,14 @@ public class PathServiceImp implements PathService {
         } catch (SavePathExpcetion ex){
             throw new SavePathExpcetion();
         }
+    }
+
+    public List<PathResponse> getPaths(){
+        List<PathResponse> response = null;
+        for(PathDTO pathDTO : lsPath){
+            response.add( new PathResponse(pathDTO) );
+        }
+        return response;
     }
 
 }

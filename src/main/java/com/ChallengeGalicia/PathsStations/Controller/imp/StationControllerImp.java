@@ -2,6 +2,7 @@ package com.ChallengeGalicia.PathsStations.Controller.imp;
 
 import com.ChallengeGalicia.PathsStations.Controller.StationsController;
 import com.ChallengeGalicia.PathsStations.Exceptions.SaveStationException;
+import com.ChallengeGalicia.PathsStations.Objects.DTO.StationsDTO;
 import com.ChallengeGalicia.PathsStations.Objects.Request.StationRequest;
 import com.ChallengeGalicia.PathsStations.Objects.Response.StationResponse;
 import com.ChallengeGalicia.PathsStations.services.StationService;
@@ -9,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @SuppressWarnings("unused")
@@ -42,5 +46,13 @@ public class StationControllerImp implements StationsController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
+    }
+
+    @Override
+    public ResponseEntity<List<StationResponse>> getPath() throws RuntimeException {
+
+        List<StationResponse> stations = stationService.getStations();
+
+        return new ResponseEntity<>(stations, HttpStatus.OK);
     }
 }

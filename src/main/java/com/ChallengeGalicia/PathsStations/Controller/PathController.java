@@ -4,10 +4,9 @@ import com.ChallengeGalicia.PathsStations.Objects.Request.PathRequest;
 import com.ChallengeGalicia.PathsStations.Objects.Response.PathResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping(value = "/path",
         consumes = "application/json",
@@ -16,8 +15,11 @@ public interface PathController {
 
     @PutMapping("/{path_id}")
     ResponseEntity<PathResponse> putPath(
-            @PathVariable("path_id") String pathId,
-            @Valid @RequestBody PathRequest pathRequest//Uso anotacion para validar el Cuerpo
+            @PathVariable("path_id") Long pathId,
+            @Valid @RequestBody PathRequest pathRequest
     ) throws RuntimeException;
+
+    @GetMapping("/{paths}")
+    ResponseEntity<List<PathResponse>> getPath() throws RuntimeException;
 
 }

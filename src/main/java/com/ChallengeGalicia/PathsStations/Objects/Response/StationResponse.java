@@ -1,5 +1,6 @@
 package com.ChallengeGalicia.PathsStations.Objects.Response;
 
+import com.ChallengeGalicia.PathsStations.Objects.DTO.StationsDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -8,6 +9,10 @@ import lombok.Data;
 public class StationResponse {
 
     protected String name;
+
+    public StationResponse(StationsDTO stationsDTO){
+        this.name = stationsDTO.getName();
+    }
 }
 /*
 * Este Objeto Se usa para las respuestas. Pensando en el Futuro por si se requiere un EP

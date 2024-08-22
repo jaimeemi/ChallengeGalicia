@@ -1,10 +1,13 @@
 package com.ChallengeGalicia.PathsStations.Controller;
 
 import com.ChallengeGalicia.PathsStations.Objects.Request.StationRequest;
+import com.ChallengeGalicia.PathsStations.Objects.Response.PathResponse;
 import com.ChallengeGalicia.PathsStations.Objects.Response.StationResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RequestMapping(value = "/stations",
@@ -17,4 +20,8 @@ public interface StationsController  {
             @PathVariable ("station_id") String stationId,
             @Valid @RequestBody StationRequest stationBody //Uso anotacion para validar el Cuerpo
     ) throws RuntimeException;
+
+    @GetMapping("/{stations}")
+    ResponseEntity<List<StationResponse>> getPath() throws RuntimeException;
+
 }

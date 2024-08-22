@@ -4,11 +4,14 @@ import com.ChallengeGalicia.PathsStations.Controller.PathController;
 import com.ChallengeGalicia.PathsStations.Exceptions.SaveStationException;
 import com.ChallengeGalicia.PathsStations.Objects.Request.PathRequest;
 import com.ChallengeGalicia.PathsStations.Objects.Response.PathResponse;
+import com.ChallengeGalicia.PathsStations.Objects.Response.StationResponse;
 import com.ChallengeGalicia.PathsStations.services.PathService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @SuppressWarnings("unused")
@@ -18,11 +21,11 @@ public class PathControllerImp implements PathController {
     PathService pathService;
 
     @Override
-    public ResponseEntity<PathResponse> putPath(String pathId, PathRequest pathRequest) throws RuntimeException {
+    public ResponseEntity<PathResponse> putPath(Long pathId, PathRequest pathRequest) throws RuntimeException {
 
         boolean saveStation = false;
 
-        pathRequest.setId( Long.valueOf( pathId ) );
+        pathRequest.setId(pathId);
         try{
             saveStation = pathService.savePath( pathRequest );
 
@@ -34,5 +37,13 @@ public class PathControllerImp implements PathController {
                     ex.getCause());
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+    }
+
+    @Override
+    public ResponseEntity<List<PathResponse>> getPath() throws RuntimeException {
+
+        List<PathResponse> paths = pathService.getPaths();
+
+        return new ResponseEntity<>(paths, HttpStatus.OK);
     }
 }
