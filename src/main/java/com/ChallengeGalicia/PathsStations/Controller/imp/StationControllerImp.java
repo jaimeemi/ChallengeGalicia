@@ -2,7 +2,7 @@ package com.ChallengeGalicia.PathsStations.Controller.imp;
 
 import com.ChallengeGalicia.PathsStations.Controller.StationsController;
 import com.ChallengeGalicia.PathsStations.Exceptions.SaveStationException;
-import com.ChallengeGalicia.PathsStations.Objects.Request.StationBodyRequest;
+import com.ChallengeGalicia.PathsStations.Objects.Request.StationRequest;
 import com.ChallengeGalicia.PathsStations.Objects.Response.StationResponse;
 import com.ChallengeGalicia.PathsStations.services.StationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +20,14 @@ public class StationControllerImp implements StationsController {
     @Override
     public ResponseEntity<StationResponse> putStation(
             String stationId,
-            StationBodyRequest stationBody)
+            StationRequest stationBody)
         throws RuntimeException {
 
         boolean saveStation = false;
 
         //Armamos 1 Resquest No es lo mejor, Pero tiene posibilidades de Expasion
-        //En caso de crecer la cantidad de parametros se crea una nueva clase Aqui en la implementacion del controlador
+        //En caso de crecer la cantidad de parametros se crea una nueva clase
+        // Aqui en la implementacion del controlador
         //Que se supone sera un objeto para enviarlo al servicio
         stationBody.setId( Long.valueOf(stationId) );
         try{

@@ -8,11 +8,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class StationBodyRequest {
+public class PathRequest {
 
-    protected Long id;
+    protected long id;
 
-    @NotBlank(message = "Name cannot be null or empty")
-    protected String name;
+    @NotBlank(message = "La Destinacion No puede estar vacia")
+    protected long destination_id;
+
+    @NotBlank(message = "El costo del viaje no puede ser gratuito")
+    protected double cost;
 
 }

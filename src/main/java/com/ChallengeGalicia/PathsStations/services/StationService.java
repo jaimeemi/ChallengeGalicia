@@ -1,9 +1,9 @@
 package com.ChallengeGalicia.PathsStations.services;
 
 import com.ChallengeGalicia.PathsStations.Exceptions.SaveStationException;
-import com.ChallengeGalicia.PathsStations.Objects.Request.StationBodyRequest;
+import com.ChallengeGalicia.PathsStations.Objects.Request.StationRequest;
 
 public interface StationService {
 
-    boolean saveStation( StationBodyRequest request ) throws SaveStationException;
+    boolean saveStation( StationRequest request ) throws SaveStationException;
 }
