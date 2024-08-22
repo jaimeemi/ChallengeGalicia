@@ -1,3 +1,24 @@
+* Quiero Destacar que mis metodos estan construidos con Argumentos que recibo inmediatamente
+  Pero cuando superan los 3 o 5 Argumentos, suelo trabajar con Objetos
+  Para manjeralos entre el Controlador y El service de mejor manera
+
+* Este codigo es todo idea Mia. Honesto soy, si he buscado algunas cosas en internet
+  ya que no aplico todo y no guardo toda la informacion de todo el codigo en mi cabeza
+
+* Quiero reconocer que esto lo hice en 2 dias, y salvo excepciones como la dockerizacion  
+  lo pensaba realizar con ChatGPT, ya que no tengo suficiente conocimientos
+
+* Suelos hacer los test lo mas facil posible.
+
+
+
+LLEGUE HASTA DONDE PUEDE
+ESTOY CANSADO
+PUDE HABERLO TERMINADO, PERO NO QUIERO CONTINUAR
+ESPERO ME VALOREN POR EL CODIGO LIMPIO
+
+    *********************************************************************
+
 Java Code Challenge
 
 Nos gustaría tener un servicio web RESTful que almacene información de caminos y estaciones (en
@@ -59,17 +80,4 @@ Algunos ejemplos simples podrian ser:
 
 
     *********************************************************************
-
-* Quiero Destacar que mis metodos estan construidos con Argumentos que recibo inmediatamente
- Pero cuando superan los 3 o 5 Argumentos, suelo trabajar con Objetos
- Para manjeralos entre el Controlador y El service de mejor manera
- 
-* Este codigo es todo idea Mia. Honesto soy, si he buscado algunas cosas en internet 
- ya que no aplico todo y no guardo toda la informacion de todo el codigo en mi cabeza
-
-* Quiero reconocer que esto lo hice en 2 dias, y salvo excepciones como la dockerizacion  
- lo pensaba realizar con ChatGPT, ya que no tengo suficiente conocimientos
-
-* Suelos hacer los test lo mas facil posible. 
- 
 
