@@ -14,5 +14,4 @@ public class StationRequest {
 
     @NotBlank(message = "No es posible que la estacion no posea nombre")
     protected String name;
-
 }

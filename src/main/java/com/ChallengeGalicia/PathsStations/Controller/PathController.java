@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping(value = "/path",
-        consumes = "application/json",
-        produces = "application/json")
+@RequestMapping(value = "/path")
+//        consumes = "application/json",
+//        produces = "application/json")
 public interface PathController {
 
     @PutMapping("/{path_id}")
@@ -19,7 +19,7 @@ public interface PathController {
             @Valid @RequestBody PathRequest pathRequest
     ) throws RuntimeException;
 
-    @GetMapping("/{paths}")
+    @GetMapping("/")
     ResponseEntity<List<PathResponse>> getPath() throws RuntimeException;
 
 }

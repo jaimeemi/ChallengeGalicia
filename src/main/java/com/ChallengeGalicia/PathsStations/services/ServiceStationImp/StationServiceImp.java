@@ -31,7 +31,7 @@ public class StationServiceImp implements StationService{
     }
 
     public List<StationResponse> getStations() {
-        List<StationResponse> response = null;
+        List<StationResponse> response = new ArrayList<>();
         for(StationsDTO sr : lsStations){
             response.add( new StationResponse(sr) );
         }

@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@RequestMapping(value = "/stations",
-        consumes = "application/json",
-        produces = "application/json")
+@RequestMapping(value = "/stations")
+//        consumes = "application/json",
+//        produces = "application/json")
 public interface StationsController  {
 
     @PutMapping("/{station_id}")
@@ -21,7 +21,7 @@ public interface StationsController  {
             @Valid @RequestBody StationRequest stationBody //Uso anotacion para validar el Cuerpo
     ) throws RuntimeException;
 
-    @GetMapping("/{stations}")
+    @GetMapping("/")
     ResponseEntity<List<StationResponse>> getPath() throws RuntimeException;
 
 }

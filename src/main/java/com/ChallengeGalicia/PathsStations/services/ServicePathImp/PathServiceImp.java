@@ -29,7 +29,7 @@ public class PathServiceImp implements PathService {
     }
 
     public List<PathResponse> getPaths(){
-        List<PathResponse> response = null;
+        List<PathResponse> response = new ArrayList<>();
         for(PathDTO pathDTO : lsPath){
             response.add( new PathResponse(pathDTO) );
         }

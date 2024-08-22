@@ -41,9 +41,13 @@ public class PathControllerImp implements PathController {
 
     @Override
     public ResponseEntity<List<PathResponse>> getPath() throws RuntimeException {
-
-        List<PathResponse> paths = pathService.getPaths();
-
+        List<PathResponse> paths = null;
+        try{
+            paths = pathService.getPaths();
+        }catch(RuntimeException ex){
+            System.out.println(ex.getMessage());
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity<>(paths, HttpStatus.OK);
     }
 }
