@@ -2,7 +2,7 @@ package com.ChallengeGalicia.PathsStations.Controller.imp;
 
 import com.ChallengeGalicia.PathsStations.Controller.StationsController;
 import com.ChallengeGalicia.PathsStations.Exceptions.SaveStationException;
-import com.ChallengeGalicia.PathsStations.Objects.DTO.StationsDTO;
+import com.ChallengeGalicia.PathsStations.Objects.DTO.GenericResponse;
 import com.ChallengeGalicia.PathsStations.Objects.Request.StationRequest;
 import com.ChallengeGalicia.PathsStations.Objects.Response.StationResponse;
 import com.ChallengeGalicia.PathsStations.services.StationService;
@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @SuppressWarnings("unused")
@@ -22,7 +21,7 @@ public class StationControllerImp implements StationsController {
     StationService stationService;
 
     @Override
-    public ResponseEntity<StationResponse> putStation(
+    public ResponseEntity<GenericResponse> putStation(
             String stationId,
             StationRequest stationBody)
         throws RuntimeException {
@@ -37,13 +36,13 @@ public class StationControllerImp implements StationsController {
         try{
             saveStation = stationService.saveStation( stationBody );
 
-            return new ResponseEntity<>(HttpStatus.OK);
+            return new ResponseEntity<>(new GenericResponse("ok"),HttpStatus.OK);
 
         } catch (SaveStationException ex) {
             System.out.println("Ocurrio un Error durante el proceso. Datos tecnicos: " +
                     ex.getMessage() +
                     ex.getCause());
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new GenericResponse("bad"), HttpStatus.BAD_REQUEST);
         }
 
     }

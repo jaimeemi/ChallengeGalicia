@@ -3,8 +3,10 @@ package com.ChallengeGalicia.PathsStations.services.ServicePathImp;
 import com.ChallengeGalicia.PathsStations.Exceptions.SavePathExpcetion;
 import com.ChallengeGalicia.PathsStations.Objects.DTO.PathDTO;
 import com.ChallengeGalicia.PathsStations.Objects.Request.PathRequest;
+import com.ChallengeGalicia.PathsStations.Objects.Response.DestinationsResponse;
 import com.ChallengeGalicia.PathsStations.Objects.Response.PathResponse;
 import com.ChallengeGalicia.PathsStations.services.PathService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -34,6 +36,12 @@ public class PathServiceImp implements PathService {
             response.add( new PathResponse(pathDTO) );
         }
         return response;
+    }
+
+    ResponseEntity<List<DestinationsResponse>> getDestinations(Long sourceID, Long destinationId ){
+
+
+        return null;
     }
 
 }

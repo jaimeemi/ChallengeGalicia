@@ -18,13 +18,17 @@ public class StationsDTO {
     protected String name;
 
     public StationsDTO (StationRequest request){
-        this.id = ++contadorStation;
+        this.id = verifiID(request.getId());
         this.name = request.getName();
     }
 
     public StationsDTO(String name) {
         this.id = ++contadorStation;
         this.name = name;
+    }
+
+    private long verifiID(long id){
+        return this.id < id ? id : ++contadorStation;
     }
 
 }
