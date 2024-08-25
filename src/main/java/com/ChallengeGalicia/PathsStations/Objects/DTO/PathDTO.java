@@ -31,4 +31,9 @@ public class PathDTO {
         this.destination_id = destination_id;
         this.cost = cost;
     }
+
+    public PathDTO(long source_id, double newCost) {
+        this.source_id = source_id;
+        this.cost = newCost;
+    }
 }

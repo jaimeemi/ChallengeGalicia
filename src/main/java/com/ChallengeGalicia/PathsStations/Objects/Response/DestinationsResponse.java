@@ -17,4 +17,13 @@ public class DestinationsResponse {
         this.cost += pathDTO.getCost();
     }
 
+    public DestinationsResponse (List<PathDTO> pathDTO){
+        for (PathDTO p : pathDTO){
+            this.path.add(p.getSource_id());
+            this.path.add(p.getDestination_id());
+            this.cost += p.getCost();
+        }
+    }
+
+
 }
