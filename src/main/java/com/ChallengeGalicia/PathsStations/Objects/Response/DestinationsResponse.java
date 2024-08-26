@@ -11,6 +11,10 @@ public class DestinationsResponse {
     protected List<Long> path;
     protected double cost;
 
+    public DestinationsResponse () {
+
+    }
+
     public DestinationsResponse (PathDTO pathDTO){
         this.path.add(pathDTO.getSource_id());
         this.path.add(pathDTO.getDestination_id());

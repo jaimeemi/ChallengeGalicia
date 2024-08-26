@@ -14,5 +14,5 @@ public interface PathService {
 
     List<PathResponse> getPaths();
 
-    List<DestinationsResponse> getDestination(Long sourceID, Long destinationId);
+    List<DestinationsResponse> getDestination(long sourceID, long destinationId);
 }

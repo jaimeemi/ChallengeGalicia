@@ -14,8 +14,11 @@ import java.util.List;
 @SuppressWarnings("unused")
 public class StationServiceImp implements StationService{
 
-
     private List<StationsDTO> lsStations = new ArrayList<>();
+
+    public List<StationsDTO> getLsStations() {
+        return lsStations;
+    }
 
     @Override
     public boolean saveStation(StationRequest request) throws SaveStationException {
@@ -37,6 +40,5 @@ public class StationServiceImp implements StationService{
         }
         return response;
     }
-
 
 }
