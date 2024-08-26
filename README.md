@@ -5,9 +5,6 @@
 * Este codigo es todo idea Mia. Honesto soy, si he buscado algunas cosas en internet
   ya que no aplico todo y no guardo toda la informacion de todo el codigo en mi cabeza
 
-* Quiero reconocer que esto lo hice en 2 dias, y salvo excepciones como la dockerizacion  
-  lo pensaba realizar con ChatGPT, ya que no tengo suficiente conocimientos
-
 * Suelos hacer los test lo mas facil posible.
 
 
