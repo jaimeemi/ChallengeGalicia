@@ -11,12 +11,6 @@
 * Suelos hacer los test lo mas facil posible.
 
 
-
-LLEGUE HASTA DONDE PUEDE
-ESTOY CANSADO
-PUDE HABERLO TERMINADO, PERO NO QUIERO CONTINUAR
-ESPERO ME VALOREN POR EL CODIGO LIMPIO
-
     *********************************************************************
 
 Java Code Challenge
